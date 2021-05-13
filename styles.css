@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    color: #1E1E2A;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ---------------------- Header */
+
+.header__container{
+    height: 100vh;
+    width: 100vw;
+    background-color: #00bfff;
+    background-image: url('img/background.png'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 0 112px;
+    position: relative;
+}
+
+
+
+.h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.h2{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.social__media{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.social__media a{
+    text-decoration: none;
+    color: #1E1E2A;
+    padding: 1rem 4rem;
+    border: 1px solid #1E1E2A;
+    min-width: 4rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transition: .5 ease-in-out ;
+    margin-top: 2rem;
+}
+
+a:hover{
+  background-color: #00bfff;  
+}
+
+/* ---------------------- Botaão hamburgeeeeer */
+ 
+
+.checkbox__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    transition: 400ms ease-in-out 0s;
+}
+
+.checkbox .trace{
+    height: 2px;
+    width: 50px;
+    background-color: #1E1E2A;
+    position: absolute;
+    border-radius: 4px;
+    transition: 0.5s ease-in-out;
+}
+
+.checkbox .trace:nth-child(1){
+    top: 26px;
+    transform:rotate(0);
+}
+.checkbox .trace:nth-child(2){
+    top: 46px;
+    transform: rotate(0);
+}
+.checkbox .trace:nth-child(3){
+    top: 66px;
+    transform: rotate(0);
+}
+
+#toggle {
+    display: none;
+}
+
+/* ----------------------  MENU */
+
+.menu {
+    position: absolute;
+    top: 28px;
+    right: 30px;
+    background-color: transparent;
+    height: 4px;
+    width: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 0px #ffff;
+    z-index: -1;
+    transition: 400ms ease-in-out 0s; 
+}
+
+.menu__item{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: 400ms ease-in-out 0s;
+}
+
+.menu__item ul{
+    list-style-type: none;
+}
+
+.menu__item ul li a{
+    margin: 10px 0;
+    color: #1E1E2A;
+    text-decoration:none;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:40px;
+}
+
+/* ----------------------  Animação Menu (hamburger) */
+
+#toggle:checked + .checkbox .trace:nth-child(1){
+    transform: rotate(45deg);
+    top: 47px;    
+}
+
+#toggle:checked + .checkbox .trace:nth-child(2){
+    transform: translate(-100px);
+    top: 47px;
+    visibility: hidden;
+    opacity: 0;    
+}
+
+#toggle:checked + .checkbox .trace:nth-child(3){
+    transform: rotate(-45deg);
+    top: 48px;    
+}
+
+#toggle:checked + .checkbox{
+    background-color: #ffff;
+}
+
+#toggle:checked ~ .menu{ /*~ pois esta se comunicando com tds as classes abaixo do menu*/
+    box-shadow: 0px 0px 0px 100vmax #ffff;
+    z-index: 1;
+}
+
+#toggle:checked ~ .menu__item{
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ---------------------- CARDS*/
+
+.container{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 3rem 0;
+}
+
+.card__container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+}
+
+.card{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    border-color: #1E1E2A;
+    border-style: solid;
+    margin: 3rem 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00bfff;
+    background-image: url('img/Projeto\ BPress.PNG');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(0.5);
+    color: #1E1E2A;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+.card2{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    border-color: #1E1E2A;
+    border-style: solid;
+    margin: 3rem 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00bfff;
+    background-image: url('img/Projeto\ Clone\ da\ Netflix.PNG');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(0.5);
+    color: #1E1E2A;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+.card3{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    border-color: #1E1E2A;
+    border-style: solid;
+    margin: 3rem 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00bfff;
+    background-image: url('img/Projeto\ Spotify\ Foto.PNG');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(0.5);
+    color: #1E1E2A;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.card__text {
+    width: 40%;
+    letter-spacing: 1px;
+    color: rgb(109, 109, 109);
+}
+
+.card__text h2{
+    width: 60%;
+    color: rgb(80, 80, 80);
+}
+
+.card-wrapper{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.card-wrapper::before{
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: block;
+    border:1px solid #ffffff;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.card-wrapper h2{
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 0;
+    color: #ffffff;
+    letter-spacing: 4px;
+    transition: 0.5 ease-in-out;
+}
+
+.card-wrapper #proj01{
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 0;
+    color: #1E1E2A;
+    letter-spacing: 4px;
+    transition: 0.5 ease-in-out;
+}
+
+.card-wrapper #proj001{
+    font-size: 0;
+    visibility: hidden;
+    color: #1E1E2A;
+    opacity: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.5 ease-in-out;
+}
+
+.card-wrapper p{
+    font-size: 0;
+    visibility: hidden;
+    color: #ffffff;
+    opacity: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.5 ease-in-out;
+}
+
+.card:hover{
+    filter: unset;
+}
+
+.card:hover > .card-wrapper::before{
+    height: 200px;
+    width: 200px;
+    opacity: 1;
+}
+
+.card:hover > .card-wrapper p{
+    opacity: 1;
+    visibility: visible;
+    font-size: 14px;
+}
+.card:hover > .card-wrapper #proj001{
+    opacity: 1;
+    visibility: visible;
+    font-size: 14px;
+}
+
+/* ---------------------------------------------------- */
+.card2:hover{
+    filter: unset;
+}
+
+.card2:hover > .card-wrapper::before{
+    height: 200px;
+    width: 200px;
+    opacity: 1;
+}
+
+.card2:hover > .card-wrapper p{
+    opacity: 1;
+    visibility: visible;
+    font-size: 14px;
+}
+
+/* ---------------------------------------------------- */
+.card3:hover{
+    filter: unset;
+}
+
+.card3:hover > .card-wrapper::before{
+    height: 200px;
+    width: 200px;
+    opacity: 1;
+}
+
+.card3:hover > .card-wrapper p{
+    opacity: 1;
+    visibility: visible;
+    font-size: 14px;
+}
+
+/* ---------------------------------------------------- */
+
+/* footer */
+
+.footer__container{
+    width: 100%;
+    height: 100px;
+    background-color:#00bfff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1E1E2A;
+    font-size: 26px;
+}
